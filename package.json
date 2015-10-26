@@ -1,14 +1,14 @@
 {
-  "name": "generator-sg-component",
-  "version": "0.0.3",
+  "name": "generator-aimerm-component",
+  "version": "0.0.1",
   "description": "Yeoman generator and modified generator-ng-component",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "https://github.com/AngularJS-SPA-Development/generator-sg-component",
+  "repository": "https://github.com/mousing/generator-aimerm-component.git",
   "author": {
-    "name": "Peter yun",
+    "name": "aimacy",
     "email": "",
-    "url": "https://github.com/AngularJS-SPA-Development"
+    "url": "https://github.com/mousing/generator-aimerm-component.git"
   },
   "original author": {
     "name": "Tyler Henkel",
