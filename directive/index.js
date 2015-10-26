@@ -1,5 +1,6 @@
 'use strict';
 var path = require('path');
+var yeoman = require('yeoman-generator');
 var util = require('util');
 var ngUtil = require('../util');
 var ScriptBase = require('../script-base.js');
@@ -10,39 +11,36 @@ var Generator = module.exports = function Generator() {
 
 util.inherits(Generator, ScriptBase);
 
-Generator.prototype.prompting = function askFor() {
+Generator.prototype.askFor = function askFor() {
   var self = this;
   var done = this.async();
 
-  var prompts = [{
-    name: 'moduleName',
-    message: 'What module name would you like to use?',
-    default: self.scriptAppName + '.' + self.name,
-    when: function() {return self.config.get('modulePrompt');}
-  }, {
-    name: 'dir',
-    message: 'Where would you like to create this directive?',
-    default: self.config.get('directiveDirectory')
-  }, {
-    type:'confirm',
-    name: 'complex',
-    message: 'Does this directive need an external html file?',
-    default: true
-  }];
+  var prompts = [
+    {
+      name: 'dir',
+      message: 'Where would you like to create this directive?',
+      default: self.config.get('directiveDirectory')
+    },
+    {
+      type:'confirm',
+      name: 'complex',
+      message: 'Does this directive need an external html file?',
+      default: true
+    }
+  ];
 
   this.prompt(prompts, function (props) {
-    self.scriptAppName = props.moduleName || self.scriptAppName;
-    self.dir = path.join(props.dir, self.name);
-    self.complex = props.complex;
+    this.dir = path.join(props.dir, this.name);
+    this.complex = props.complex;
     done();
-  });
+  }.bind(this));
 };
 
-Generator.prototype.writing = function createFiles() {
-  var configName = 'directiveSimpleTemplates';
+Generator.prototype.createFiles = function createFiles() {
+  var configName = 'directiveSimple';
   var templateDir = path.join(this.sourceRoot(), 'directiveSimple');
   if (this.complex) {
-    configName = 'directiveComplexTemplates';
+    configName = 'directiveComplex';
     templateDir = path.join(this.sourceRoot(), 'directiveComplex');
   }
 

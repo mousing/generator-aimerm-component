@@ -1,5 +1,5 @@
 {
-  "generator-ng-component": {
+  "generator-sg-component": {
     "routeDirectory": "app/components/",
     "directiveDirectory": "app/components/",
     "filterDirectory": "app/components/",

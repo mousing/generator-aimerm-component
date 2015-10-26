@@ -1,14 +1,19 @@
 {
-  "name": "generator-aimerm-component",
-  "version": "0.9.9",
-  "description": "Yeoman generator",
+  "name": "generator-sg-component",
+  "version": "0.0.3",
+  "description": "Yeoman generator and modified generator-ng-component",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "https://github.com/mousing/generator-aimerm-component.git",
+  "repository": "https://github.com/AngularJS-SPA-Development/generator-sg-component",
   "author": {
+    "name": "Peter yun",
+    "email": "",
+    "url": "https://github.com/AngularJS-SPA-Development"
+  },
+  "original author": {
     "name": "Tyler Henkel",
     "email": "",
-    "url": "https://github.com/mousing/generator-aimerm-component.git"
+    "url": "https://github.com/DaftMonk"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -20,10 +25,8 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "chalk": "~0.4.0",
-    "lodash": "^3.10.1",
-    "underscore.string": "^3.2.2",
-    "yeoman-generator": "~0.20.3"
+    "yeoman-generator": "~0.17.0",
+    "chalk": "~0.4.0"
   },
   "devDependencies": {
     "chai": "^1.9.1",
@@ -32,7 +35,9 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-mocha-test": "^0.10.2",
     "grunt-release": "^0.7.0",
-    "mocha": "*",
-    "yeoman-assert": "^2.0.0"
+    "mocha": "*"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
   }
 }

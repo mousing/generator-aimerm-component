@@ -11,6 +11,5 @@ describe 'Filter: <%= cameledName %>', ->
     <%= cameledName %> = $filter '<%= cameledName %>'
 
   it 'should return the input prefixed with \'<%= cameledName %> filter:\'', ->
-    text = 'angularjs'<% if (hasFilter('jasmine')) { %>
-    expect(<%= cameledName %> text).toBe '<%= cameledName %> filter: ' + text<% } if (hasFilter('mocha')) { %>
-    <%= expect() %><%= cameledName %> text<%= to() %>.equal '<%= cameledName %> filter: ' + text<% } %>
+    text = 'angularjs'
+    expect(<%= cameledName %> text).toBe '<%= cameledName %> filter: ' + text

@@ -1,6 +1,16 @@
-'use strict';
+(function() {
 
-angular.module('<%= scriptAppName %>')
-  .service('<%= cameledName %>', function () {
-    // AngularJS will instantiate a singleton by calling "new" on this function
-  });
+  'use strict';
+
+  angular
+    .module('<%= scriptAppName %>')
+    .service('<%= cameledName %>', <%= classedName %>);
+
+  /* @ngInject */
+  function <%= classedName %>() {
+    this.hi = function (){
+      return 'hi';
+    }
+  }
+
+})();

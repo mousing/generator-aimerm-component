@@ -4,44 +4,24 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 
+
 var NgComponentGenerator = yeoman.generators.Base.extend({
 
-  initializing: function () {
-    if (!this.options['skip-message']) {
-      this.log(chalk.magenta('You\'re using the fantastic NgComponent generator.\n'));
-      this.log(chalk.magenta('Initializing yo-rc.json configuration.\n'));
+  info: function () {
+    if(!this.options['skip-message']) {
+      console.log(chalk.magenta('You\'re using the fantastic NgComponent generator.\n'));
+      console.log(chalk.magenta('Initializing yo-rc.json configuration.\n'));
     }
   },
 
-  configuring: function () {
-    var config = {
-      'routeDirectory': this.options.routeDirectory || 'app/components/',
-      'directiveDirectory': this.options.directiveDirectory || 'app/components/',
-      'filterDirectory': this.options.filterDirectory || 'app/components/',
-      'serviceDirectory': this.options.serviceDirectory || 'app/components/',
-      'basePath': this.options.basePath || 'app',
-      'moduleName': this.options.moduleName || '',
-      'modulePrompt': this.options.hasOwnProperty('modulePrompt') ?
-        this.options.modulePrompt : true,
-      'filters': this.options.filters || ['uirouter', 'jasmine'],
-      'extensions': this.options.extensions || ['js', 'html', 'scss'],
-      'directiveSimpleTemplates': this.options.directiveSimple || '',
-      'directiveComplexTemplates': this.options.directiveComplex || '',
-      'filterTemplates': this.options.filter || '',
-      'serviceTemplates': this.options.service || '',
-      'factoryTemplates': this.options.factory || '',
-      'controllerTemplates': this.options.controller || '',
-      'decoratorTemplates': this.options.decorator || '',
-      'providerTemplates': this.options.provider || '',
-      'routeTemplates': this.options.route || ''
-    };
-
-    if (this.options.forceConfig) {
-      this.config.set(config);
-      this.config.forceSave();
-    } else {
-      this.config.defaults(config);
-    }
+  saveConfig: function() {
+    this.config.set('routeDirectory', this.options.routeDirectory || 'app/components/');
+    this.config.set('directiveDirectory', this.options.directiveDirectory || 'app/components/');
+    this.config.set('filterDirectory', this.options.filterDirectory || 'app/components/');
+    this.config.set('serviceDirectory', this.options.serviceDirectory || 'app/components/');
+    this.config.set('basePath', this.options.basePath || 'app');
+    this.config.set('filters', this.options.filters || ['uirouter']);
+    this.config.set('extensions', this.options.extensions || ['js', 'html', 'scss']);
   }
 });
 
