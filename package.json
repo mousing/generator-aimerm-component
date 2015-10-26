@@ -1,14 +1,14 @@
 {
-  "name": "generator-ng-component",
-  "version": "0.1.1",
+  "name": "generator-aimerm-component",
+  "version": "0.9.9",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "DaftMonk/generator-ng-component",
+  "repository": "https://github.com/mousing/generator-aimerm-component.git",
   "author": {
     "name": "Tyler Henkel",
     "email": "",
-    "url": "https://github.com/DaftMonk"
+    "url": "https://github.com/mousing/generator-aimerm-component.git"
   },
   "engines": {
     "node": ">=0.10.0"
